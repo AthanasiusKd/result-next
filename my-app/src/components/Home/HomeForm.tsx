@@ -1,8 +1,26 @@
+"use client";
+
+import { ChangeEvent, FormEvent, useState } from "react";
+import { redirect } from "next/navigation";
 import ShowHidePassword from "./ShowHidePassword";
 
 function HomeForm() {
+  const [userType, setUserType] = useState("");
+  function handleChange(e: ChangeEvent<HTMLSelectElement>) {
+    setUserType(e.target.value);
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (userType === "Admin") {
+      redirect("/admin-dashboard");
+    } else if (userType === "Staff") {
+      redirect("/staff-dashboard");
+    }
+  }
+
   return (
-    <form className="card">
+    <form onSubmit={handleSubmit} className="card">
       <div className="gap-2 d-flex flex-column">
         <div>
           <label className="form-label login-label" htmlFor="usertype">
@@ -12,8 +30,12 @@ function HomeForm() {
             name="usertype"
             className="form-select"
             id="usertype"
+            onChange={handleChange}
+            value={userType}
           >
-            <option value="">Choose User Type</option>
+            <option value="" disabled>
+              Choose User Type
+            </option>
             <option value="Admin">Admin</option>
             <option value="Staff">Staff</option>
           </select>

@@ -11,6 +11,7 @@ export default function HomeHeader() {
           width={166}
           height={166}
           style={{ borderRadius: "10px" }}
+          priority
         />
       </div>
       <p className="login-text title">GAIUS OBASEKI INTERNATIONAL SCHOOL</p>

@@ -4,7 +4,7 @@ function HomeNavigate() {
   return (
     <div>
       <div className="student-link-div">
-        <Link className="check-link" href='/otherPage'>
+        <Link className="check-link" href='/check-result'>
           CHECK RESULT
         </Link>
       </div>
