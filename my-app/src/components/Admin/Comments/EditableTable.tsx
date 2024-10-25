@@ -1,8 +1,8 @@
 import { ChangeEvent, useRef, useState } from "react";
 
 interface Props {
-  updateData: (newData: any) => void;
-  data: { id: number; text: string }[];
+  updateData: (newData: any) => void,
+  data: {id: number, text: string}[]
 }
 
 function EditableTable(props: Props) {
@@ -32,37 +32,9 @@ function EditableTable(props: Props) {
   }
 
   const printRef = useRef<HTMLDivElement>(null);
-  const handlePrint = () => {
-    if (printRef.current) {
-      // Get the HTML content of the ref element
-      const content = printRef.current.innerHTML;
-
-      // Open a new window
-      const printWindow = window.open("", "_blank");
-      if (printWindow) {
-        // Write the HTML content into the new window
-        printWindow.document.write(`
-            <html>
-              <head>
-                <title>Print</title>
-              </head>
-              <body>
-                ${content}
-              </body>
-            </html>
-          `);
-
-        // Close the document to render
-        printWindow.document.close();
-
-        // Call the print function on the new window
-        printWindow.print();
-
-        // Close the print window after printing
-        printWindow.onafterprint = () => printWindow.close();
-      }
-    }
-  };
+  function handlePrint() {
+    window.print();
+  }
 
   return (
     <div>

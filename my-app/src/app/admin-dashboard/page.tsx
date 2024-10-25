@@ -10,6 +10,7 @@ import UpdateSession from "@/components/Admin/UpdateSession";
 import TeacherComments from "@/components/Admin/Comments/TeacherComments";
 import ClassList from "@/components/Admin/ClassList/ClassList";
 import EntrySheet from "@/components/Admin/ScoreSheet/EntrySheet";
+import Subjects from "@/components/Admin/Subjects/Subjects";
 
 export default function AdminDashboard() {
   const [activeComponent, setActiveComponent] = useState("");
@@ -37,8 +38,8 @@ export default function AdminDashboard() {
         return <UpdateSession />;
         case "seven":
           return <TeacherComments />;
-      //   case "eight":
-      //     return <Subjects />;
+        case "eight":
+          return <Subjects />;
         case "nine":
           return <EntrySheet />;
       default:

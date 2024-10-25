@@ -1,24 +1,25 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+import { DataTableProps } from "@/types/Types";
 
-function EditableTable({ data, updateData, classTitle, arm }) {
-  const [editRowId, setEditRowId] = useState(null);
+function EditableTable(props: DataTableProps) {
+  const [editRowId, setEditRowId] = useState(0);
   const [editedName, setEditedName] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
-  function handleEditClick(id, text) {
+  function handleEditClick(id: number, text: string) {
     setEditRowId(id);
     setEditedName(text);
   }
 
-  function handleSaveClick(id) {
-    const updatedData = data.map((item) =>
+  function handleSaveClick(id: number) {
+    const updatedData = props.data.map((item) =>
       item.id === id ? { ...item, text: editedName } : item
     );
-    updateData(updatedData);
-    setEditRowId(null);
+    props.updateData(updatedData);
+    setEditRowId(0);
   }
 
-  function handleInputChange(e) {
+  function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     setEditedName(e.target.value);
   }
 
@@ -30,22 +31,22 @@ function EditableTable({ data, updateData, classTitle, arm }) {
     <div>
       <div className="commentbtn-div">
         <button className="comment-btn" onClick={handleEditing}>
-          {isEditing ? "Save Changes" : "Add/Edit Names"}
+          {isEditing ? "Save Changes" : "Add/Edit Subjects"}
         </button>
       </div>
-      <div className="printable" style={{maxWidth: '900px'}}>
+      <div className="printable" style={{maxWidth: "700px"}}>
         <table className="comment-table">
           <thead>
             <tr>
-              {isEditing ? <th style={{width: '10%'}}>Actions</th> : null}
-              <th style={{width: '10%'}}>S/N</th>
-              <th style={{width : isEditing ? "55%" : "65%" }}>Name</th>
-              <th style={{width: '15%'}}>Class</th>
-              <th style={{width: '10%'}}>Arm</th>
+              {isEditing ? <th>Actions</th> : null}
+              <th style={{width: "5%"}}>S/N</th>
+              <th style={{width: "65%"}}>Subjects</th>
+              <th style={{width: "15%"}}>Class</th>
+              <th style={{width: "1%"}}>Arm</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
+            {props.data.map((item) => (
               <tr key={item.id}>
                 {isEditing ? (
                   <td>
@@ -54,7 +55,7 @@ function EditableTable({ data, updateData, classTitle, arm }) {
                         className="edit-btn"
                         onClick={() => handleSaveClick(item.id)}
                       >
-                        Update
+                        Save
                       </button>
                     ) : (
                       <button
@@ -79,8 +80,8 @@ function EditableTable({ data, updateData, classTitle, arm }) {
                     item.text
                   )}
                 </td>
-                <td>{classTitle}</td>
-                <td>{arm}</td>
+                <td>{props.classTitle}</td>
+                <td>{props.arm}</td>
               </tr>
             ))}
           </tbody>

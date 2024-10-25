@@ -1,8 +1,10 @@
 'use client'
 
+import { ChangeEvent, FormEvent } from "react";
+
 interface Props {
-  handleInput: () => void,
-  handleSubmit: () => void,
+  handleInput: (event: ChangeEvent<HTMLSelectElement>) => void ,
+  handleSubmit: (event: FormEvent) => void,
   class: string,
   arm: string
 }

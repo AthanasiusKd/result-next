@@ -1,24 +1,31 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
-function EditableTable({ data, updateData, classTitle, arm }) {
-  const [editRowId, setEditRowId] = useState(null);
+interface Props {
+  updateData: (newData: any) => void,
+  data: {id: number, text: string}[],
+  classTitle: string,
+  arm: string
+}
+
+function EditableTable(props: Props) {
+  const [editRowId, setEditRowId] = useState(0);
   const [editedName, setEditedName] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
-  function handleEditClick(id, text) {
+  function handleEditClick(id: number, text: string) {
     setEditRowId(id);
     setEditedName(text);
   }
 
-  function handleSaveClick(id) {
-    const updatedData = data.map((item) =>
+  function handleSaveClick(id: number) {
+    const updatedData = props.data.map((item) =>
       item.id === id ? { ...item, text: editedName } : item
     );
-    updateData(updatedData);
-    setEditRowId(null);
+    props.updateData(updatedData);
+    setEditRowId(0);
   }
 
-  function handleInputChange(e) {
+  function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     setEditedName(e.target.value);
   }
 
@@ -45,7 +52,7 @@ function EditableTable({ data, updateData, classTitle, arm }) {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
+            {props.data.map((item) => (
               <tr key={item.id}>
                 {isEditing ? (
                   <td>
@@ -79,8 +86,8 @@ function EditableTable({ data, updateData, classTitle, arm }) {
                     item.text
                   )}
                 </td>
-                <td>{classTitle}</td>
-                <td>{arm}</td>
+                <td>{props.classTitle}</td>
+                <td>{props.arm}</td>
               </tr>
             ))}
           </tbody>

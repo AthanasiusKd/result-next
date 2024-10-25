@@ -1,10 +1,10 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import SmallForm from "@/components/Admin/SmallForm";
+import SmallForm from "../SmallForm";
 import EditableTable from "./EditableTable";
-import NameList from "@/db/NameList";
+import SubjectList from "@/db/SubjectList";
 
-export default function ClassList() {
-  const [data, setData] = useState(NameList);
+export default function Subjects() {
+  const [data, setData] = useState(SubjectList);
   function updateData(newData: any) {
     setData(newData);
   }
@@ -29,8 +29,8 @@ export default function ClassList() {
   }
 
   const [newValues, setNewValues] = useState({
-    class: "",
-    arm: "",
+    class: '',
+    arm: ''
   });
 
   return (

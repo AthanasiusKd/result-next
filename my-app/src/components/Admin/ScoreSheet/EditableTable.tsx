@@ -7,7 +7,7 @@ interface Props {
 }
 
 function EditableTable(props: Props) {
-  const printRef = useRef<HTMLDivElement>();
+  const printRef = useRef<HTMLDivElement>(null);
   function handlePrint() {
     window.print();
   }
