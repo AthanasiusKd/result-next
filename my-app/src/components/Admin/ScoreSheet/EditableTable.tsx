@@ -1,9 +1,9 @@
 import { useRef } from "react";
 
 interface Props {
-  classTitle: string,
-  arm: string,
-  data: {id: number, text: string}[]
+  classTitle: string;
+  arm: string;
+  data: { id: number; text: string }[];
 }
 
 function EditableTable(props: Props) {
@@ -11,7 +11,6 @@ function EditableTable(props: Props) {
   function handlePrint() {
     window.print();
   }
-
   return (
     <div>
       <div className="commentbtn-div">
@@ -23,7 +22,9 @@ function EditableTable(props: Props) {
         <div className="print-only">
           <h2>{props.classTitle}</h2>
           <h2>{props.arm}</h2>
-          <p>Subject: <input type="text"></input></p>
+          <p>
+            Subject: <input type="text"></input>
+          </p>
         </div>
         <table className="comment-table">
           <thead>
