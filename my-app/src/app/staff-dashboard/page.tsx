@@ -7,6 +7,7 @@ import EnterScores from "@/components/Staff/EnterScores";
 import ChooseClass from "@/components/Staff/ChooseClass";
 import Psychomotor from "@/components/Staff/Psychomotor";
 import ScoreInput from "@/components/Staff/ScoreInput";
+import CommentInput from "@/components/Staff/EnterComment";
 
 export default function StaffDashboard() {
   const [title, setTitle] = useState("Please select an option");
@@ -23,7 +24,7 @@ export default function StaffDashboard() {
         case 'score' :
           return <ScoreInput />
       case "comments":
-        return <div>Comments</div>;
+        return <CommentInput />;
         case 'psychomotor':
           return <Psychomotor />
       default:
