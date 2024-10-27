@@ -10,7 +10,9 @@ function ClassInformation() {
     fees: "",
   });
 
-  function handleInput(event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+  function handleInput(
+    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) {
     const { id, value } = event.target;
     setFormData({
       ...formData,
@@ -28,8 +30,9 @@ function ClassInformation() {
       <div className="result-body">
         <div>
           <form onSubmit={handleSubmit} className="card check-result">
-            <p className="check-head" style={{marginBottom: "20px"}}>
-              This page <strong>must</strong> be updated every <strong>term</strong>
+            <p className="check-head" style={{ marginBottom: "20px" }}>
+              This page <strong>must</strong> be updated every{" "}
+              <strong>term</strong>
             </p>
             <div className="check-div">
               <label className="form-label info-label" htmlFor="session">
@@ -121,14 +124,12 @@ function ClassInformation() {
               />
             </div>
             <div className="d-flex justify-content-center">
-              <button
-                className="btn login-btn check-result"
-                type="submit"
-              >
+              <button className="btn login-btn check-result" type="submit">
                 Add
               </button>
             </div>
           </form>
+          <button>View/Edit</button>
         </div>
       </div>
     </>

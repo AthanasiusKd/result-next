@@ -2,13 +2,15 @@ import { useState, ChangeEvent, FormEvent } from "react";
 
 function OverallAttendance() {
   const [formData, setFormData] = useState({
-    session: '',
-    term: '',
+    session: "",
+    term: "",
     attendance: "",
     begins: "",
   });
 
-  function handleInput(event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+  function handleInput(
+    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) {
     const { id, value } = event.target;
     setFormData({
       ...formData,
@@ -31,7 +33,10 @@ function OverallAttendance() {
               <strong>term</strong>
             </p>
             <div className="check-div">
-              <label className="form-label result-label overall" htmlFor="session">
+              <label
+                className="form-label result-label overall"
+                htmlFor="session"
+              >
                 Session
               </label>
               <select
@@ -61,7 +66,10 @@ function OverallAttendance() {
               </select>
             </div>
             <div className="check-div">
-              <label className="form-label result-label overall" htmlFor="attendance">
+              <label
+                className="form-label result-label overall"
+                htmlFor="attendance"
+              >
                 total attendance
               </label>
               <input
@@ -73,14 +81,16 @@ function OverallAttendance() {
               />
             </div>
             <div className="check-div">
-              <label className="form-label result-label overall" htmlFor="begins">
+              <label
+                className="form-label result-label overall"
+                htmlFor="begins"
+              >
                 Next term begins
               </label>
               <input
                 className="form-control"
                 type="date"
                 id="begins"
-            
                 onChange={handleInput}
                 value={formData.begins}
               />
@@ -91,6 +101,7 @@ function OverallAttendance() {
               </button>
             </div>
           </form>
+          <button>View/Edit</button>
         </div>
       </div>
     </>

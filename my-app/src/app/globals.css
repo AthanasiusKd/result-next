@@ -370,7 +370,8 @@ img {
   width: 10%;
 }
 
-.comment-input, .comment-input:focus {
+.comment-input,
+.comment-input:focus {
   width: 100%;
   border: none;
   padding: 6px 0;
@@ -388,82 +389,64 @@ img {
   }
 }
 
-
-
 /* to be deleted */
-.table-container {
+.overall-div {
   width: 100%;
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  background: #fff;
+  padding: 12px 24px;
 }
 
-.styled-table {
+.table-container {
+  width: 100%;
+  max-width: 1400px;
+  padding: 20px;
+  background: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.score-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.styled-table th, 
-.styled-table td {
-  padding: 12px;
+.score-table tbody tr:hover {
+  background-color: #ececec;
+}
+
+.score-table th {
+  background-color: #333399;
+  color: white;
+  font-weight: bold;
+  padding: 18px 12px;
+  text-align: left;
+  border: 1px solid #111;
+}
+
+.score-table td {
+  padding: 4px;
   border: 1px solid #111;
   text-align: left;
 }
 
-.styled-table input {
+.score-table input,
+.score-table input:focus {
   width: 100%;
-  padding: 8px;
-  margin: 5px 0;
+  padding: 6px;
+  outline: none;
+  border: none;
 }
 
-.styled-table button {
+.score-table button {
+  width: 100%;
   padding: 8px 16px;
-  background-color: #4CAF50;
+  background-color: #333891;
   color: white;
   border: none;
   cursor: pointer;
 }
 
-.styled-table button:hover {
-  background-color: #45a049;
-}
-
-.table-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-}
-
-.styled-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.styled-table th, 
-.styled-table td {
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-.styled-table input {
-  width: 100%;
-  padding: 8px;
-  margin: 5px 0;
-}
-
-.styled-table button {
-  padding: 8px 16px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.styled-table button:hover {
-  background-color: #45a049;
+.score-table button:hover {
+  background-color: #333791;
 }
 
 .pagination-controls {
@@ -475,7 +458,7 @@ img {
 
 .pagination-controls button {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   cursor: pointer;

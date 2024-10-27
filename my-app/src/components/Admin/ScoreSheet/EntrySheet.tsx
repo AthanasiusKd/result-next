@@ -1,14 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import SmallForm from "../SmallForm";
-import EditableTable from './EditableTable';
+import EditableTable from './TableComponent';
 import NameList from "@/db/NameList";
-import axios from "axios";
 
 export default function EntrySheet() {
-  const url = 'https://jsonplaceholder.typicode.com/users'
-  const myData = axios.get(url).then(response => {
-    response
-  })
   const [data, setData] = useState(NameList);
 
   const [formValues, setFormValues] = useState({
@@ -43,7 +38,6 @@ export default function EntrySheet() {
         class={formValues.class}
         arm={formValues.arm}
       />
-      <p>{newValues.class}</p>
       <div>
         {showTable ? (
           <EditableTable

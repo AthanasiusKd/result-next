@@ -24,8 +24,8 @@ function CreateAccount() {
       <div className="result-body">
         <div>
           <form onSubmit={handleSubmit} className="card check-result">
-            <p className="check-head" style={{marginBottom: "20px"}}>
-              Create Authorization For Teachers 
+            <p className="check-head" style={{ marginBottom: "20px" }}>
+              Create Authorization For Teachers
             </p>
             <div className="check-div">
               <label className="form-label result-label" htmlFor="staff">
@@ -52,14 +52,12 @@ function CreateAccount() {
               />
             </div>
             <div className="d-flex justify-content-center">
-              <button
-                className="btn login-btn check-result"
-                type="submit"
-              >
+              <button className="btn login-btn check-result" type="submit">
                 create account
               </button>
             </div>
           </form>
+          <button>View/Edit</button>
         </div>
       </div>
     </>
