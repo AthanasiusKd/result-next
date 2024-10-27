@@ -97,7 +97,7 @@ export default function AdminDashboard() {
           <TabBtn
             title="Enter Result"
             handleClick={goTo}
-            caseNumber="/dashboard"
+            caseNumber="/staff-dashboard"
           />
           <TabBtn
             title="Check Result"

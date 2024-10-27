@@ -6,7 +6,9 @@ function UpdateSession() {
     endYear: "",
   });
 
-  function handleInput(event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+  function handleInput(
+    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) {
     const { id, value } = event.target;
     setFormData({
       ...formData,
@@ -23,9 +25,14 @@ function UpdateSession() {
     <>
       <div className="result-body">
         <div>
-          <form onSubmit={handleSubmit} style={{maxWidth: "600px"}} className="card check-result">
+          <form
+            onSubmit={handleSubmit}
+            style={{ maxWidth: "600px" }}
+            className="card check-result"
+          >
             <p className="check-head" style={{ marginBottom: "20px" }}>
-              This should be done at the start of each new session
+              This <strong>must</strong> be done at the start of each{" "}
+              <strong>new session</strong>
             </p>
             <div className="check-div">
               <label
@@ -65,6 +72,7 @@ function UpdateSession() {
               </button>
             </div>
           </form>
+          <button>View/Edit</button>
         </div>
       </div>
     </>
