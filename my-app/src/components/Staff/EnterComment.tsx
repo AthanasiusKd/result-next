@@ -1,13 +1,12 @@
 import React, { ChangeEvent, useState } from "react";
 import NameList from "@/db/NameList";
 
-function ScoreInput() {
+function CommentInput() {
   const initialRowState = {
     studentName: "",
-    project: "",
-    test1: "",
-    test2: "",
-    exam: "",
+    attendance: "",
+    gender: "",
+    commentNo: "",
   };
 
   // Generate a fixed array of 50 rows
@@ -59,13 +58,12 @@ function ScoreInput() {
         <table className="score-table">
           <thead>
             <tr>
-              <th style={{width: '3%'}}>S/N</th>
-              <th style={{width: '47%'}}>Student Name</th>
-              <th style={{width: '10%'}}>Project</th>
-              <th style={{width: '10%'}}>1st Test</th>
-              <th style={{width: '10%'}}>2nd Test</th>
-              <th style={{width: '10%'}}>Exam</th>
-              <th style={{width: '8%'}}></th>
+              <th style={{ width: "4%" }}>S/N</th>
+              <th style={{ width: "46%" }}>Student Name</th>
+              <th style={{ width: "14%" }}>Gender</th>
+              <th style={{ width: "14%" }}>Attendance</th>
+              <th style={{ width: "14%" }}>Comment No</th>
+              <th style={{ width: "8%" }}></th>
             </tr>
           </thead>
           <tbody>
@@ -75,41 +73,25 @@ function ScoreInput() {
                 <td>{NameList[row.id - 1].text}</td>
                 <td>
                   <input
-                    type="number"
-                    name="project"
-                    min={0}
-                    max={10}
-                    value={row.project}
+                    type="text"
+                    name="gender"
+                    value={row.gender}
                     onChange={(e) => handleInputChange(e, row.id)}
                   />
                 </td>
                 <td>
                   <input
                     type="number"
-                    name="test1"
-                    min={0}
-                    max={10}
-                    value={row.test1}
+                    name="attendance"
+                    value={row.attendance}
                     onChange={(e) => handleInputChange(e, row.id)}
                   />
                 </td>
                 <td>
                   <input
                     type="number"
-                    name="test2"
-                    min={0}
-                    max={10}
-                    value={row.test2}
-                    onChange={(e) => handleInputChange(e, row.id)}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name="exam"
-                    min={0}
-                    max={70}
-                    value={row.exam}
+                    name="commentNo"
+                    value={row.commentNo}
                     onChange={(e) => handleInputChange(e, row.id)}
                   />
                 </td>
@@ -143,4 +125,4 @@ function ScoreInput() {
   );
 }
 
-export default ScoreInput;
+export default CommentInput;

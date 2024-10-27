@@ -1,7 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import SubjectList from "@/db/SubjectList";
 
 interface Props {
-  onSubmit: (arg0: string) => void
+  onSubmit: (arg0: string) => void;
 }
 
 function EnterScores(props: Props) {
@@ -100,7 +101,24 @@ function EnterScores(props: Props) {
             <label className="form-label result-label" htmlFor="subject">
               SUBJECT
             </label>
+
             <select
+              className="form-select"
+              id="subject"
+              onChange={handleInput}
+              value={formData.subject}
+            >
+              <option value="" disabled>
+                CHOOSE SUBJECT
+              </option>
+              {SubjectList.map((item) =>(
+                <option key={item.id}>
+                  {item.text}
+                </option>
+              ))}
+            </select>
+
+            {/* <select
               className="form-select"
               id="subject"
               onChange={handleInput}
@@ -112,7 +130,7 @@ function EnterScores(props: Props) {
               <option>Maths</option>
               <option>Eng</option>
               <option>Sci</option>
-            </select>
+            </select> */}
           </div>
           <div className="d-flex justify-content-center">
             <button className="btn login-btn check-result" type="submit">

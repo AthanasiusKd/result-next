@@ -389,7 +389,6 @@ img {
   }
 }
 
-/* to be deleted */
 .overall-div {
   width: 100%;
   padding: 12px 24px;
@@ -420,6 +419,7 @@ img {
   padding: 18px 12px;
   text-align: left;
   border: 1px solid #111;
+  text-transform: uppercase;
 }
 
 .score-table td {
@@ -434,6 +434,7 @@ img {
   padding: 6px;
   outline: none;
   border: none;
+  border-radius: 4px;
 }
 
 .score-table button {
@@ -471,4 +472,24 @@ img {
 
 .pagination-controls span {
   font-size: 16px;
+}
+
+.rating-table {
+  width: 200px;
+}
+
+.rating-table th {
+  background: #333399;
+  color: #fff;
+  border: 1px solid #111;
+  padding: 8px;
+}
+
+.rating-table td {
+  border: 1px solid #111;
+}
+
+.link-btn {
+  text-decoration: underline;
+  font-weight: 600;
 }
