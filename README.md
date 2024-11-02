@@ -1,0 +1,1 @@
+Front end design using typescript in nextjs for a school result platform. Allows for an admin log in to supervise and edit inputs and a teachers log in where they can enter scores, comments and psychomotor 
